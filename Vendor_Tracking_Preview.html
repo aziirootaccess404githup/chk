@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Tracking Update — Preview</title>
+<style>
+  :root{
+    --bg:#0b1220; --surface:#111a2e; --surface2:#16213b; --border:#233156;
+    --text:#e8ecf7; --text2:#a9b4d0; --text3:#6c7aa0;
+    --accent:#4f8cff; --gold:#e7b354; --green:#34c98f; --amber:#e7a93f; --red:#f0616d; --blue:#4f8cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.5}
+  header{padding:40px 24px 24px;text-align:center;border-bottom:1px solid var(--border)}
+  header h1{margin:0 0 8px;font-size:26px;color:var(--gold);letter-spacing:.3px}
+  header p{margin:0;color:var(--text2);font-size:14px}
+  .wrap{max-width:920px;margin:0 auto;padding:32px 20px 80px}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:36px}
+  .toc h3{margin:0 0 10px;font-size:13px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+  .toc a{display:block;color:var(--accent);text-decoration:none;font-size:14px;padding:4px 0}
+  .toc a:hover{text-decoration:underline}
+  section.feature{margin-bottom:56px;scroll-margin-top:20px}
+  .feature-head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+  .feature-num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.05em}
+  .feature-head h2{margin:0;font-size:19px;color:var(--text)}
+  .where{font-size:12px;color:var(--text3);margin-bottom:16px;font-family:'Consolas',monospace}
+  .where span{color:var(--accent)}
+  .why{background:var(--surface);border-left:3px solid var(--gold);border-radius:6px;padding:12px 16px;font-size:13.5px;color:var(--text2);margin-bottom:18px}
+  .mockup{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;overflow-x:auto}
+  .mockup-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{text-align:left;color:var(--text3);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap;font-size:11px;text-transform:uppercase}
+  td{padding:9px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600}
+  .pill-green{background:rgba(52,201,143,.15);color:var(--green)}
+  .pill-blue{background:rgba(79,140,255,.15);color:var(--blue)}
+  .pill-amber{background:rgba(231,169,63,.15);color:var(--amber)}
+  .pill-gray{background:rgba(108,122,160,.15);color:var(--text3)}
+  .btn{display:inline-block;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;border:1px solid var(--border);color:var(--text2);background:var(--surface2)}
+  .btn-green{background:rgba(52,201,143,.15);color:var(--green);border-color:transparent}
+  .btn-ghost{background:transparent}
+  .link{color:var(--accent)}
+  .sel{padding:6px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);color:var(--text2);font-size:12px}
+  .flexrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  .badge-cell{font-weight:600;color:var(--text)}
+  .matrix-cell{text-align:center;font-weight:600}
+  .highlight{outline:2px dashed var(--gold);outline-offset:3px;border-radius:4px}
+  .note{font-size:11px;color:var(--text3);margin-top:10px}
+  .qbox{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px;max-width:420px}
+  .qlabel{font-size:13px;margin-bottom:10px;font-weight:600}
+  .obtn{display:block;width:100%;text-align:left;padding:10px 12px;margin-bottom:6px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:12.5px}
+  .status-chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--text3);margin-top:14px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  footer{text-align:center;padding:30px;color:var(--text3);font-size:12px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🔲 Vendor Tracking &amp; Country-Geo Update</h1>
+  <p>Preview before deployment — Matrix World Research Panel</p>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h3>Is page mein</h3>
+    <a href="#f1">1. Leads page — Vendor filter &amp; column</a>
+    <a href="#f2">2. Project Details — Vendor Breakdown</a>
+    <a href="#f3">3. Vendors List — Search, Export, Projects count</a>
+    <a href="#f4">4. Vendor Details — Quick shortcuts</a>
+    <a href="#f5">5. Projects List — Vendors count</a>
+    <a href="#f6">6. Naya page: Vendor × Project Matrix</a>
+    <a href="#f7">7. Country/City tracking fix (behind the scenes)</a>
+    <a href="#f8">8. Prescreener — Country + local currency income</a>
+  </div>
+
+  <!-- FEATURE 1 -->
+  <section class="feature" id="f1">
+    <div class="feature-head"><span class="feature-num">01</span><h2>Leads Page — Vendor Filter &amp; Column</h2></div>
+    <div class="where">Kaha: <span>admin.php → ?page=leads</span></div>
+    <div class="why">Kya karta hai: Ab har lead ke saamne pata chalega kis vendor se aaya. "All Vendors" dropdown se filter kar sakte ho, aur CSV export mein bhi Vendor column shamil hoga.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <div class="flexrow">
+        <select class="sel">All Status</select>
+        <select class="sel">All Countries</select>
+        <select class="sel highlight">All Vendors ▾ <span style="color:var(--gold)">← naya</span></select>
+        <span class="btn btn-green">⬇ Export to Excel</span>
+      </div>
+      <table>
+        <tr><th>#</th><th>UID</th><th>Project</th><th>Client</th><th class="highlight">Vendor</th><th>Status</th><th>Country</th></tr>
+        <tr><td>50</td><td>ARKRT1318</td><td>Mindsforest</td><td>—</td><td class="highlight"><span class="link">Voicentra Research</span></td><td><span class="pill pill-green">Complete</span></td><td>India</td></tr>
+        <tr><td>49</td><td>ARKRT1166</td><td>Mindsforest</td><td>—</td><td class="highlight"><span class="link">GMS</span></td><td><span class="pill pill-amber">Terminate</span></td><td>Pakistan</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FEATURE 2 -->
+  <section class="feature" id="f2">
+    <div class="feature-head"><span class="feature-num">02</span><h2>Project Details — Vendor Breakdown</h2></div>
+    <div class="where">Kaha: <span>admin.php → ?page=project_view&id=..</span></div>
+    <div class="why">Kya karta hai: Project ke andar hi dikh jayega konsa vendor kitna de raha hai (clicks/completes/terminates/conv%), bina Vendors list khole. Saath mein "Search all leads" aur "Export to Excel" shortcuts bhi, jo seedha is project ke liye pre-filtered Leads page pe le jaate hain.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <div class="flexrow highlight" style="padding:8px;width:fit-content">
+        <span class="btn btn-ghost">🔍 Search all leads for this project</span>
+        <span class="btn btn-green">⬇ Export to Excel</span>
+      </div>
+      <div style="font-size:13px;font-weight:600;margin:14px 0 8px">Vendor Breakdown</div>
+      <table>
+        <tr><th>Vendor</th><th>Clicks</th><th>Completes</th><th>Terminates</th><th>Q-Fail</th><th>Overquota</th><th>Conv%</th></tr>
+        <tr><td class="badge-cell"><span class="link">Voicentra Research</span></td><td>420</td><td>61</td><td>140</td><td>12</td><td>4</td><td>14.5%</td></tr>
+        <tr><td class="badge-cell"><span class="link">GMS</span></td><td>210</td><td>19</td><td>88</td><td>5</td><td>2</td><td>9.0%</td></tr>
+        <tr><td class="badge-cell" style="color:var(--text3)">— No Vendor / Direct —</td><td>60</td><td>8</td><td>20</td><td>1</td><td>0</td><td>13.3%</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FEATURE 3 -->
+  <section class="feature" id="f3">
+    <div class="feature-head"><span class="feature-num">03</span><h2>Vendors List — Search, Export, Projects Count</h2></div>
+    <div class="where">Kaha: <span>admin.php → ?page=vendors</span></div>
+    <div class="why">Kya karta hai: Bade vendor list mein naam/email se search karo, poori list ek click mein CSV export karo, aur "Projects" badge se pata chale vendor kitne alag projects pe kaam kar raha hai — vendor_view khole bina.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <div class="flexrow">
+        <input class="sel highlight" placeholder="Search vendor name or email...">
+        <span class="btn">Search</span>
+        <span class="btn btn-green">⬇ Export to Excel</span>
+      </div>
+      <table>
+        <tr><th>#</th><th>Vendor</th><th>Email</th><th>Clicks</th><th>Completes</th><th class="highlight">Projects</th><th>Status</th></tr>
+        <tr><td>1</td><td><span class="link">Voicentra Research</span></td><td>contact@voicentra.com</td><td>2,140</td><td>310</td><td class="highlight"><span class="pill pill-blue">4 projects</span></td><td><span class="pill pill-green">Active</span></td></tr>
+        <tr><td>2</td><td><span class="link">GMS</span></td><td>hello@gms.io</td><td>980</td><td>94</td><td class="highlight"><span class="pill pill-blue">2 projects</span></td><td><span class="pill pill-green">Active</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FEATURE 4 -->
+  <section class="feature" id="f4">
+    <div class="feature-head"><span class="feature-num">04</span><h2>Vendor Details — Quick Shortcuts</h2></div>
+    <div class="where">Kaha: <span>admin.php → ?page=vendor_view&id=..</span></div>
+    <div class="why">Kya karta hai: Project Details page jaisa hi pattern — is specific vendor ke saare leads dhoondne ya export karne ke liye alag se filter set nahi karna padega.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <div class="flexrow" style="justify-content:space-between">
+        <span class="btn btn-ghost">← Back to Vendors</span>
+        <div class="flexrow highlight" style="padding:6px">
+          <span class="btn btn-ghost">🔍 Search all leads for this vendor</span>
+          <span class="btn btn-green">⬇ Export to Excel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 5 -->
+  <section class="feature" id="f5">
+    <div class="feature-head"><span class="feature-num">05</span><h2>Projects List — Vendors Count</h2></div>
+    <div class="where">Kaha: <span>admin.php → ?page=projects</span></div>
+    <div class="why">Kya karta hai: "Konsa project kis-kis vendor ko assign hai" — list mein hi ek nazar mein pata chal jaayega, ek naye "Vendors" badge column se.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <table>
+        <tr><th>Project</th><th>CPI</th><th>IR%</th><th>Completes</th><th>Conv%</th><th class="highlight">Vendors</th><th>Status</th></tr>
+        <tr><td class="badge-cell">Mindsforest</td><td>$2.50</td><td>18%</td><td>310</td><td>14.5%</td><td class="highlight"><span class="pill pill-blue">3 vendors</span></td><td><span class="pill pill-green">Active</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FEATURE 6 -->
+  <section class="feature" id="f6">
+    <div class="feature-head"><span class="feature-num">06</span><h2>Naya Page: Vendor × Project Matrix</h2></div>
+    <div class="where">Kaha: <span>Sidebar → 🔲 Vendor × Project (naya link)</span></div>
+    <div class="why">Kya karta hai: Sabse zyada demand wala sawaal — "kis vendor ko kaunsa project assign hai" — ek hi grid mein saari cheez. Rows = vendors, Columns = projects. Har cell clicks/completes dikhata hai; ⏸ badge us cell pe hai jaha vendor us project pe paused hai. Kisi bhi number pe click karo to seedha us vendor+project ki filtered Leads list khul jaayegi.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <table>
+        <tr><th style="position:sticky;left:0;background:var(--surface2)">Vendor</th><th>Mindsforest</th><th>ProjectX Q3</th><th>Healthcare Panel</th></tr>
+        <tr><td class="badge-cell" style="position:sticky;left:0;background:var(--surface)">Voicentra Research</td><td class="matrix-cell"><span class="link">420 / <span style="color:var(--green)">61</span></span></td><td class="matrix-cell">—</td><td class="matrix-cell highlight"><span class="link">88 / <span style="color:var(--green)">9</span></span> <span class="pill pill-amber" style="padding:1px 5px">⏸</span></td></tr>
+        <tr><td class="badge-cell" style="position:sticky;left:0;background:var(--surface)">GMS</td><td class="matrix-cell"><span class="link">210 / <span style="color:var(--green)">19</span></span></td><td class="matrix-cell"><span class="link">55 / <span style="color:var(--green)">6</span></span></td><td class="matrix-cell">—</td></tr>
+      </table>
+      <div class="note">⏸ = vendor is paused on that project (rp_project_vendors se). Number pe click → filtered Leads.</div>
+    </div>
+  </section>
+
+  <!-- FEATURE 7 -->
+  <section class="feature" id="f7">
+    <div class="feature-head"><span class="feature-num">07</span><h2>Country/City Tracking Fix</h2></div>
+    <div class="where">Kaha: <span>config.php → mlBWO() function (behind the scenes, koi UI change nahi)</span></div>
+    <div class="why">
+      <strong>Problem tha:</strong> Country column bahut zyada "—" dikha raha tha kyunki geo-lookup sirf ek provider (ip-api.com) use kar raha tha, jiski free limit 45 req/min hai — jyada traffic pe silently fail ho raha tha.<br><br>
+      <strong>Fix:</strong> Ab 3 providers ka fallback chain hai — ip-api.com fail/rate-limit ho to turant ipwho.is try hota hai, phir ipinfo.io. Sirf tab khaali rehta hai jab teeno fail ho jaayein. 200+ country codes ki mapping bhi add hui taaki format hamesha consistent rahe ("India" — abbreviation nahi).
+    </div>
+    <div class="mockup">
+      <div class="mockup-label">Before / After</div>
+      <div style="display:flex;gap:20px">
+        <div style="flex:1">
+          <div style="font-size:11px;color:var(--text3);margin-bottom:6px">PEHLE</div>
+          <table><tr><th>UID</th><th>Country</th></tr><tr><td>ARKRT1318</td><td style="color:var(--text3)">—</td></tr><tr><td>ARKRT1166</td><td style="color:var(--text3)">—</td></tr></table>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:11px;color:var(--gold);margin-bottom:6px">AB</div>
+          <table><tr><th>UID</th><th>Country</th></tr><tr><td>ARKRT1318</td><td>India</td></tr><tr><td>ARKRT1166</td><td>Pakistan</td></tr></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 8 -->
+  <section class="feature" id="f8">
+    <div class="feature-head"><span class="feature-num">08</span><h2>Prescreener — Country + Local Currency Income</h2></div>
+    <div class="where">Kaha: <span>prescreener.php → naya Question 4</span></div>
+    <div class="why">Kya karta hai: Respondent se poocha jaata hai "Which country are you in?" (IP se auto-detect hoke pehle se select bhi hota hai, respondent khud badal sakta hai). Uske turant baad wala Income question apne aap us country ki currency mein convert ho jaata hai — symbol + rounded amount ke saath. <strong>Zaroori:</strong> Database mein hamesha USD wala standard bracket hi save hota hai (e.g. "Under $25K") — sirf respondent ko dikhne wala label badalta hai, taaki reports/exports mein cross-country comparison kabhi na tootey.</div>
+    <div class="mockup">
+      <div class="mockup-label">Preview</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <div class="qbox">
+          <div class="qlabel">4. Which country are you in?</div>
+          <select class="sel highlight" style="width:100%">India ▾</select>
+        </div>
+        <div class="qbox">
+          <div class="qlabel">5. What is your annual household income?</div>
+          <div class="obtn highlight">Under ₹20,00,000</div>
+          <div class="obtn highlight">₹20,00,000–₹40,00,000</div>
+          <div class="obtn highlight">₹40,00,000–₹60,00,000</div>
+          <div class="note">Amounts local currency mein dikhte hain, backend mein hamesha USD bracket save hota hai.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="status-chip"><span class="dot"></span> Ye sab abhi sirf local (test) copy mein hai — koi bhi change live server pe apply nahi hua hai. Deploy karne se pehle staging folder pe test karna recommended hai.</div>
+
+</div>
+
+<footer>Matrix World Research Panel — Vendor Tracking Update Preview</footer>
+
+</body>
+</html>
